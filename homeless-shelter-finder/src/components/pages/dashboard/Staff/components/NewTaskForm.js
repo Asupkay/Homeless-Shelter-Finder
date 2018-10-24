@@ -30,41 +30,35 @@ class NewTaskForm extends Component {
   render() {
     return (
       <form id="newTaskForm" onSubmit={this.handleSubmit}>
-        <label htmlFor="taskTitle">
-          Task Title:
-          <input
-            id="taskTitle"
-            type="text"
-            name="title"
-            value={this.state.title}
-            onChange={this.handleChange}
-          />
-        </label>
+        <label htmlFor="taskTitle">Task Title:</label>
+        <input
+          id="taskTitle"
+          type="text"
+          name="title"
+          value={this.state.title}
+          onChange={this.handleChange}
+        />
 
-        <label htmlFor="taskJob">
-          Type of work required:
-          <select
-            id="taskJob"
-            name="job"
-            value={this.state.job}
-            onChange={this.handleChange}
-          >
-            <option value="General Handiness">General Handiness</option>
-            <option value="Plumbing">Plumbing</option>
-            <option value="Electrical">Electrical</option>
-            <option value="IT">IT</option>
-          </select>
-        </label>
+        <label htmlFor="taskJob">Type of work required:</label>
+        <select
+          id="taskJob"
+          name="job"
+          value={this.state.job}
+          onChange={this.handleChange}
+        >
+          <option value="General Handiness">General Handiness</option>
+          <option value="Plumbing">Plumbing</option>
+          <option value="Electrical">Electrical</option>
+          <option value="IT">IT</option>
+        </select>
 
-        <label htmlFor="taskDescription">
-          Task Description:{" "}
-          <textarea
-            id="taskDescription"
-            name="description"
-            value={this.state.description}
-            onChange={this.handleChange}
-          />
-        </label>
+        <label htmlFor="taskDescription">Task Description: </label>
+        <textarea
+          id="taskDescription"
+          name="description"
+          value={this.state.description}
+          onChange={this.handleChange}
+        />
 
         <button>Add Task</button>
       </form>

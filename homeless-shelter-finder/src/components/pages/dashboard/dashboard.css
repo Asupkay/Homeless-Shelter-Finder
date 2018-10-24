@@ -7,3 +7,15 @@
   padding: 1em;
   margin: 0.5em;
 }
+
+form {
+  display: grid;
+  max-width: 500px;
+
+  grid-template-columns: 50% 50%;
+}
+
+textarea {
+  max-width: 100%;
+  height: 150px;
+}
