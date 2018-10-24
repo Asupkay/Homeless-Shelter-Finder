@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import SignUp from "./pages/signup/SignUp";
 import SignUpVolunteer from "./pages/signup/SignUpVolunteer";
 import SignUpStaff from "./pages/signup/SignUpStaff";
@@ -14,11 +14,14 @@ class App extends Component {
           <h1>Shelter Helper</h1>
         </header>
 
-        <Route path="/signup" component={SignUp} exact />
-        <Route path="/signup/volunteer" component={SignUpVolunteer} />
-        <Route path="/signup/staff" component={SignUpStaff} />
-        <Route path="/dashboard/volunteer" component={Volunteer} />
-        <Route path="/dashboard/staff" component={Staff} />
+        <Switch>
+          <Route path="/signup" component={SignUp} exact />
+          <Route path="/signup/volunteer" component={SignUpVolunteer} />
+          <Route path="/signup/staff" component={SignUpStaff} />
+          <Route path="/dashboard/volunteer" component={Volunteer} />
+          <Route path="/dashboard/staff" component={Staff} />
+          <Redirect to="/signup/" />
+        </Switch>
       </div>
     );
   }
