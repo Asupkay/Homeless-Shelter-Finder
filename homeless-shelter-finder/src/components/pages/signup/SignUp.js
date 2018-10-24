@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./signup.css";
 
 const SignUp = props => (
-  <main className="signup">
+  <main className="signup signup--volunteer">
     <header>
       <h2>Welcome to Shelter Helper!</h2>
       <p>
@@ -12,13 +13,15 @@ const SignUp = props => (
       </p>
     </header>
 
-    <NavLink to="/signup/volunteer" className="signup__button">
-      I am interested in volunteering.
-    </NavLink>
+    <div className="signup__buttons">
+      <NavLink to="/signup/volunteer" className="signup__button">
+        I am interested in volunteering.
+      </NavLink>
 
-    <NavLink to="/signup/staff" className="signup__button">
-      I am currently a staff member of a homeless Shelter.
-    </NavLink>
+      <NavLink to="/signup/staff" className="signup__button">
+        I am currently a staff member of a homeless Shelter.
+      </NavLink>
+    </div>
   </main>
 );
 

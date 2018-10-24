@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NewTaskForm from "./components/NewTaskForm";
 import { tasks } from "../../../../data/index";
+import "../dashboard.css";
 
 class DashboardStaff extends Component {
   constructor(props) {

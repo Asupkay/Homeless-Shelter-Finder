@@ -1,0 +1,9 @@
+.task {
+  border: 1px solid black;
+
+  min-width: 40%;
+  width: fit-content;
+
+  padding: 1em;
+  margin: 0.5em;
+}

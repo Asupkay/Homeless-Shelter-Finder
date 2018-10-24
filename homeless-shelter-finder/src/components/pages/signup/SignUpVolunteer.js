@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const SignUpVolunteer = props => (
-  <main className="signup__volunteer">
+  <main className="signup signup__volunteer">
     <header>
       <h2>
         Enter the information below to start finding help with your shelter
@@ -10,12 +10,10 @@ const SignUpVolunteer = props => (
     </header>
 
     <form>
-      <label htmlFor="volunteerFullname">
-        Full Name: <input id="volunteerFullname" type="text" />
-      </label>
-
+      <label htmlFor="volunteerFullname">Full Name:</label>
+      <input id="volunteerFullname" type="text" />
+      What are your skills?
       <div className="signup__volunteer__skills">
-        What are your skills?
         <label htmlFor="handinessSkill">
           General Handiness:
           <input
@@ -48,10 +46,8 @@ const SignUpVolunteer = props => (
           <input id="ITSkill" type="checkbox" name="skills" value="IT" />
         </label>
       </div>
-
-      <label htmlFor="volunteerEmail">
-        Email: <input id="volunteerEmail" type="text" />
-      </label>
+      <label htmlFor="volunteerEmail">Email:</label>
+      <input id="volunteerEmail" type="text" />
       <NavLink to="/dashboard/volunteer">
         <button>Submit</button>
       </NavLink>
