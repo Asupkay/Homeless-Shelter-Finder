@@ -10,9 +10,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <h1>Shelter Helper</h1>
-        </header>
+        <div className="ui inverted segment">
+          <h1 className="ui red inverted header">Shelter Helper</h1>
+        </div>
 
         <Switch>
           <Route path="/signup" component={SignUp} exact />
