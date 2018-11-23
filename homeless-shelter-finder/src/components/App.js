@@ -5,14 +5,13 @@ import SignUpVolunteer from "./pages/signup/SignUpVolunteer";
 import SignUpStaff from "./pages/signup/SignUpStaff";
 import Volunteer from "./pages/dashboard/Volunteer";
 import Staff from "./pages/dashboard/Staff/";
+import NavBar from "./components/navBar";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="ui inverted segment">
-          <h1 className="ui red inverted header">Shelter Helper</h1>
-        </div>
+        <NavBar/>
 
         <Switch>
           <Route path="/signup" component={SignUp} exact />
