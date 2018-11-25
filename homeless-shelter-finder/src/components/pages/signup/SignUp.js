@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./signup.css";
 
 const SignUp = props => (
-  <main className="signup signup--volunteer">
+  <React.Fragment>
     <h2 className="ui header">
       Welcome to Shelter Helper!
       <div className="sub header">
@@ -14,16 +14,17 @@ const SignUp = props => (
     </h2>
     <div className="ui divider" />
    
-    <div className="signup__buttons">
-      <NavLink to="/signup/volunteer" className="signup__button">
+    <div className="ui padded segment">
+      <NavLink to="/signup/volunteer" className="ui fluid primary button" role="button">
         I am interested in volunteering.
       </NavLink>
+      <div class="ui horizontal divider">Or</div>
 
-      <NavLink to="/signup/staff" className="signup__button">
-        I am currently a staff member of a homeless Shelter.
+      <NavLink to="/signup/staff" className="ui fluid secondary button" role="button">
+        I am currently a staff member of a homeless shelter.
       </NavLink>
     </div>
-  </main>
+  </React.Fragment>
 );
 
 export default SignUp;
