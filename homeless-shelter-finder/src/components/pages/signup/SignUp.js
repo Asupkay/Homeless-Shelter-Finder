@@ -2,11 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { Segment, Button, Divider } from 'semantic-ui-react'
 import "./signup.css";
-import Header from "../../components/header";
+import StandardHeader from "../../components/header";
 
 const SignUp = props => (
   <React.Fragment>
-    <Header header="Welcome to Shelter Helper" subHeader="Our site is meant to connect people who would like to volunteer their time and skills at local homeless shelters with the people running the shelters that could use their help."/>
+    <StandardHeader header="Welcome to Shelter Helper" subHeader="Our site is meant to connect people who would like to volunteer their time and skills at local homeless shelters with the people running the shelters that could use their help."/>
    
     <Segment padded>
       <NavLink to="/signup/volunteer">

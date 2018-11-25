@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Header from '../../components/header';
+import StandardHeader from '../../components/header';
 
 const SignUpVolunteer = props => (
   <React.Fragment>
-    <Header header="Information Form" subHeader="Enter the information below to find a shelter that best fits your skills"/>
+    <StandardHeader header="Information Form" subHeader="Enter the information below to find a shelter that best fits your skills"/>
 
     <form className="ui form">
       <div className="equal width fields">

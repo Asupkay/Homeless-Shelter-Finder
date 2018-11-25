@@ -1,18 +1,18 @@
 import React from 'react';
+import { Header, Divider } from 'semantic-ui-react'
 
-const Header = (props) => {
+const StandardHeader = (props) => {
   return (
     <React.Fragment>
-      <h2 className="ui header">
-        { props.header }
-        <div className="sub header">
-          { props.subHeader }
-        </div>
-      </h2>
-      <div className="ui divider" />
+      <Header
+        as='h2'
+        content={props.header}
+        subheader={props.subHeader}
+      />
+      <Divider/>
     </React.Fragment>
   );
 }
 
-export default Header;
+export default StandardHeader;
 
