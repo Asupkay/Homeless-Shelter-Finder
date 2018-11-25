@@ -1,58 +1,60 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Header from '../../components/header';
 
 const SignUpVolunteer = props => (
-  <main className="signup signup__volunteer">
-    <header>
-      <h2>
-        Enter the information below to start finding help with your shelter
-      </h2>
-    </header>
+  <React.Fragment>
+    <Header header="Information Form" subHeader="Enter the information below to find a shelter that best fits your skills"/>
 
-    <form>
-      <label htmlFor="volunteerFullname">Full Name:</label>
-      <input id="volunteerFullname" type="text" />
-      What are your skills?
-      <div className="signup__volunteer__skills">
-        <label htmlFor="handinessSkill">
-          General Handiness:
-          <input
-            id="handinessSkill"
-            type="checkbox"
-            name="skills"
-            value="handiness"
-          />
-        </label>
-        <label htmlFor="plumbingSkill">
-          Plumbing:
-          <input
-            id="plumbingSkill"
-            type="checkbox"
-            name="skills"
-            value="plumbing"
-          />
-        </label>
-        <label htmlFor="electricalSkill">
-          Electrical:
-          <input
-            id="electricalSkill"
-            type="checkbox"
-            name="skills"
-            value="electrical"
-          />
-        </label>
-        <label htmlFor="ITSkill">
-          IT:
-          <input id="ITSkill" type="checkbox" name="skills" value="IT" />
-        </label>
+    <form className="ui form">
+      <div className="equal width fields">
+        <div className="field">
+          <label>First Name</label>
+          <div className="ui input">
+            <input type="text" placeholder="First name"/>
+          </div>
+        </div>
+        <div className="field">
+          <label>Last Name</label>
+          <div className="ui input">
+            <input type="text" placeholder="Last name"/>
+          </div>
+        </div>
       </div>
-      <label htmlFor="volunteerEmail">Email:</label>
-      <input id="volunteerEmail" type="text" />
-      <NavLink to="/dashboard/volunteer">
-        <button>Submit</button>
-      </NavLink>
+      <div className="inline fields">
+        <label>What are your skills?</label>
+        <div className="field">
+          <div className="ui checkbox">
+            <input type="checkbox" className="hidden" readOnly="" tabIndex="0" value="handiness"/>
+            <label>General Handiness</label>
+          </div>
+          <div className="ui checkbox">
+            <input type="checkbox" className="hidden" readOnly="" tabIndex="0" value="plumbing"/>
+            <label>Plumbing</label>
+          </div>
+          <div className="ui checkbox">
+            <input type="checkbox" className="hidden" readOnly="" tabIndex="0" value="eletrical"/>
+            <label>Electrical</label>
+          </div>
+          <div className="ui checkbox">
+            <input type="checkbox" className="hidden" readOnly="" tabIndex="0" value="IT"/>
+            <label>IT</label>
+          </div>
+        </div>
+      </div>
+      <div className="field">
+        <label>Email</label>
+        <div className="ui input">
+          <input type="text" placeholder="Email"/>
+        </div>
+      </div>
+      <div className="field">
+        <NavLink to="/dashboard/volunteer">
+          <button className="ui button">Submit</button>
+        </NavLink>
+      </div>
     </form>
-  </main>
+  </React.Fragment>
 );
 
 export default SignUpVolunteer;

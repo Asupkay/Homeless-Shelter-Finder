@@ -1,14 +1,19 @@
 import React from 'react';
+import { Menu, Item, Header, Image } from 'semantic-ui-react';
 import home from '../../home.svg';
 
 const NavBar = (props) => {
   return (
-      <div className='ui inverted menu' style={{borderRadius: "0px"}}>
-        <div className="item">
-          <img src={home} className="ui mini image" alt="logo" />
-        </div>
-        <div className="header item">Shelter Helper</div>
-      </div> 
+      <Menu inverted>
+        <a href="/">
+          <Menu.Item>
+            <Image src={home} className="ui mini image" alt="logo" />
+          </Menu.Item>
+        </a>
+        <Menu.Item header>
+          Shelter Helper
+        </Menu.Item>
+      </Menu>
   );
 }
 
