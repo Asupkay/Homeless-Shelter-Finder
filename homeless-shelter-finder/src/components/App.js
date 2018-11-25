@@ -13,14 +13,16 @@ class App extends Component {
       <div className="App">
         <NavBar/>
 
-        <Switch>
-          <Route path="/signup" component={SignUp} exact />
-          <Route path="/signup/volunteer" component={SignUpVolunteer} />
-          <Route path="/signup/staff" component={SignUpStaff} />
-          <Route path="/dashboard/volunteer" component={Volunteer} />
-          <Route path="/dashboard/staff" component={Staff} />
-          <Redirect to="/signup/" />
-        </Switch>
+        <div className="ui container" style={{marginTop: "10px"}}>
+          <Switch>
+            <Route path="/signup" component={SignUp} exact />
+            <Route path="/signup/volunteer" component={SignUpVolunteer} />
+            <Route path="/signup/staff" component={SignUpStaff} />
+            <Route path="/dashboard/volunteer" component={Volunteer} />
+            <Route path="/dashboard/staff" component={Staff} />
+            <Redirect to="/signup/" />
+          </Switch>
+        </div>
       </div>
     );
   }

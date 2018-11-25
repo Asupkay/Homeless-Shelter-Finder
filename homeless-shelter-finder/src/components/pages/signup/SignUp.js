@@ -4,15 +4,16 @@ import "./signup.css";
 
 const SignUp = props => (
   <main className="signup signup--volunteer">
-    <header>
-      <h2>Welcome to Shelter Helper!</h2>
-      <p>
+    <h2 className="ui header">
+      Welcome to Shelter Helper!
+      <div className="sub header">
         Our site is meant to connect people who would like to volunteer their
         time and skills at local homeless shelters with the people running the
         shelters that could use their help.
-      </p>
-    </header>
-
+      </div>
+    </h2>
+    <div className="ui divider" />
+   
     <div className="signup__buttons">
       <NavLink to="/signup/volunteer" className="signup__button">
         I am interested in volunteering.
