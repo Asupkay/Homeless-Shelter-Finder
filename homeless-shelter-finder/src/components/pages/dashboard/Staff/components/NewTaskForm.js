@@ -12,8 +12,12 @@ class NewTaskForm extends Component {
   constructor(props) {
     super(props);
     this.onSubmit = props.onSubmit;
+    const title = props.title || "";
+    const job = props.job || "";
+    const description = props.description || "";
+    const id = props.id || ""
 
-    this.defaultState = { title: "", job: "", description: "" };
+    this.defaultState = { id, title, job, description };
     this.state = this.defaultState;
   }
 
@@ -30,6 +34,9 @@ class NewTaskForm extends Component {
 
     if (await this.onSubmit(this.state)) {
       this.setState(this.defaultState);
+      if(this.props.closeModal) {
+        this.props.closeModal();
+      }
     } else {
       alert("Bad input");
     }
