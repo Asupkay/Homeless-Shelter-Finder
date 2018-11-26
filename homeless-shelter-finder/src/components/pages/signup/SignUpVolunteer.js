@@ -1,60 +1,52 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react'
 import StandardHeader from '../../components/header';
+import { Button, Form, Grid} from 'semantic-ui-react'
+import { NavLink } from "react-router-dom";
 
-const SignUpVolunteer = props => (
-  <React.Fragment>
-    <StandardHeader header="Information Form" subHeader="Enter the information below to find a shelter that best fits your skills"/>
+const SignUpVolunteer = () => {
+  return (
+    <React.Fragment>
+      <StandardHeader header="Information Form" subHeader="Enter the information below to find a shelter that best fits your skills"/>
 
-    <form className="ui form">
-      <div className="equal width fields">
-        <div className="field">
-          <label>First Name</label>
-          <div className="ui input">
-            <input type="text" placeholder="First name"/>
-          </div>
-        </div>
-        <div className="field">
-          <label>Last Name</label>
-          <div className="ui input">
-            <input type="text" placeholder="Last name"/>
-          </div>
-        </div>
-      </div>
-      <div className="inline fields">
-        <label>What are your skills?</label>
-        <div className="field">
-          <div className="ui checkbox">
-            <input type="checkbox" className="hidden" readOnly="" tabIndex="0" value="handiness"/>
-            <label>General Handiness</label>
-          </div>
-          <div className="ui checkbox">
-            <input type="checkbox" className="hidden" readOnly="" tabIndex="0" value="plumbing"/>
-            <label>Plumbing</label>
-          </div>
-          <div className="ui checkbox">
-            <input type="checkbox" className="hidden" readOnly="" tabIndex="0" value="eletrical"/>
-            <label>Electrical</label>
-          </div>
-          <div className="ui checkbox">
-            <input type="checkbox" className="hidden" readOnly="" tabIndex="0" value="IT"/>
-            <label>IT</label>
-          </div>
-        </div>
-      </div>
-      <div className="field">
-        <label>Email</label>
-        <div className="ui input">
-          <input type="text" placeholder="Email"/>
-        </div>
-      </div>
-      <div className="field">
+      <Form style={{display: "block"}}>
+        <Form.Group widths="equal">
+          <Form.Field> 
+            <label>First Name</label> 
+            <input placeholder="First Name"/>
+          </Form.Field>
+          <Form.Field> 
+            <label>Last Name</label> 
+            <input placeholder="Last Name"/>
+          </Form.Field>
+        </Form.Group>
+        <Form.Group grouped>
+          <label>Skills</label>
+          <Grid stackable columns={4}>
+            <Grid.Column>
+              <Form.Field label='General Handiness' control='input' type='checkbox' />
+            </Grid.Column>
+            <Grid.Column>
+              <Form.Field label='Plumbing' control='input' type='checkbox' />
+            </Grid.Column>
+            <Grid.Column>
+              <Form.Field label='Electrical' control='input' type='checkbox' />
+            </Grid.Column>
+            <Grid.Column>
+              <Form.Field label='IT' control='input' type='checkbox' />
+            </Grid.Column>
+          </Grid>
+        </Form.Group>
+        <Form.Field> 
+          <label>Email</label> 
+          <input placeholder="Email"/>
+        </Form.Field>
         <NavLink to="/dashboard/volunteer">
-          <button className="ui button">Submit</button>
+          <Form.Field control={Button}>Submit</Form.Field>
         </NavLink>
-      </div>
-    </form>
-  </React.Fragment>
-);
+      </Form>
+    </React.Fragment>
+  )
+  
+}
 
 export default SignUpVolunteer;

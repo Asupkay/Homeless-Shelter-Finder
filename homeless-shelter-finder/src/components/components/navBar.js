@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Item, Header, Image } from 'semantic-ui-react';
+import { Menu, Image } from 'semantic-ui-react';
 import home from '../../home.svg';
 
 const NavBar = (props) => {
