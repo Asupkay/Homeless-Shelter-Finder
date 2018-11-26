@@ -12,7 +12,7 @@ class DashboardStaff extends Component {
   }
 
   handleNewTask = async task => {
-    if (!task.title || !task.description) {
+    if (!task.title || !task.description || !task.job) {
       return false;
     }
 
