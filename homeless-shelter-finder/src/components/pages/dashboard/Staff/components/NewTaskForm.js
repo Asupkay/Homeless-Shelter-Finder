@@ -1,4 +1,12 @@
 import React, { Component } from "react";
+import {Form, Input, Dropdown, Button, TextArea } from 'semantic-ui-react'; 
+
+ const options = [
+  {key: "g", text: "General Handiness", value: "Male"},
+  {key: "p", text: "Plumbing", value: "Plumbing"},
+  {key: "e", text: "Electrical", value: "Electrical"},
+  {key: "i", text: "IT", value: "IT"}
+]
 
 class NewTaskForm extends Component {
   constructor(props) {
@@ -9,8 +17,8 @@ class NewTaskForm extends Component {
     this.state = this.defaultState;
   }
 
-  handleChange = e => {
-    const { value, name } = e.target;
+  handleChange = (e, data) => {
+    const { value, name } = data;
 
     this.setState({
       [name]: value
@@ -29,39 +37,13 @@ class NewTaskForm extends Component {
 
   render() {
     return (
-      <form id="newTaskForm" onSubmit={this.handleSubmit}>
-        <label htmlFor="taskTitle">Task Title:</label>
-        <input
-          id="taskTitle"
-          type="text"
-          name="title"
-          value={this.state.title}
-          onChange={this.handleChange}
-        />
+      <Form style={{display: "block"}} onSubmit={this.handleSubmit}>
+        <Form.Field control={Input} label='Task Title' name="title" placeholder='Task Title' onChange={this.handleChange} />
+        <Form.Field control={Dropdown} label='Skill' name="job" onChange={this.handleChange} selection options={options} placeholder='Skill' />
+        <Form.Field control={TextArea} label="Description" name="description" onChange={this.handleChange} row="3"/>
 
-        <label htmlFor="taskJob">Type of work required:</label>
-        <select
-          id="taskJob"
-          name="job"
-          value={this.state.job}
-          onChange={this.handleChange}
-        >
-          <option value="General Handiness">General Handiness</option>
-          <option value="Plumbing">Plumbing</option>
-          <option value="Electrical">Electrical</option>
-          <option value="IT">IT</option>
-        </select>
-
-        <label htmlFor="taskDescription">Task Description: </label>
-        <textarea
-          id="taskDescription"
-          name="description"
-          value={this.state.description}
-          onChange={this.handleChange}
-        />
-
-        <button>Add Task</button>
-      </form>
+        <Form.Field control={Button}>Submit</Form.Field>
+      </Form>
     );
   }
 }
