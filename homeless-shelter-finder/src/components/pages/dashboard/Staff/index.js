@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NewTaskForm from "./components/NewTaskForm";
 import StandardHeader from "../../../components/header";
+import { Card, Grid } from "semantic-ui-react";
 import { tasks } from "../../../../data/index";
 import "../dashboard.css";
 
@@ -33,21 +34,19 @@ class DashboardStaff extends Component {
         <StandardHeader header="Your Shelter's Tasks"/>
         
         <h3>New Task</h3>
-        <NewTaskForm onSubmit={this.handleNewTask} />
+        <NewTaskForm onSubmit={this.handleNewTask}/>
 
-        {this.state.tasks.map(task => (
-          <div key={`task-${task.id}`} className="task task--staff">
-            <div className="task__title">{task.title}</div>
-            <div className="task__job">{task.job}</div>
-            <div className="task__description">{task.description}</div>
-            <div className="task__claimed">
-              {task.claimed ? `Claimed by: ${task.claimed}` : "Unclaimed"}
-            </div>
-            <div className="task__status">
-              {task.completed ? "Completed" : "Not Completed"}
-            </div>
-          </div>
-        ))}
+        <Grid doubling columns={5} style={{marginTop: "10px"}}>
+          {this.state.tasks.map(task => (
+            <Grid.Column key={task.id}>
+              <Card
+                header={task.title}
+                meta={task.job}
+                description={task.description}
+              />
+            </Grid.Column>
+          ))}
+        </Grid>
         
       </React.Fragment>
     );
