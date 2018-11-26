@@ -1,33 +1,42 @@
 import React from "react";
+import {Form, Button} from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
+import StandardHeader from "../../components/header";
 import "./signup.css";
 
 const SignUpStaff = props => (
-  <main className="signup signup--staff">
-    <header>
-      <h2>
-        Enter the information below to start finding help with your shelter
-      </h2>
-    </header>
+  <React.Fragment>
+    <StandardHeader header="Information Form" subHeader="Enter the information below to start finding help for your shelter"/>
 
-    <form>
-      <label htmlFor="shelterAddress">Shelter Address:</label>
-      <input id="shelterAddress" type="text" />
-
-      <label htmlFor="staffFullname">Your Full Name:</label>
-      <input id="staffFullname" type="text" />
-
-      <label htmlFor="staffPosition">Your Position at this shelter:</label>
-      <input id="staffPosition" type="text" />
-
-      <label htmlFor="staffEmail">Email:</label>
-      <input id="staffEmail" type="text" />
+    <Form style={{display: "block"}}>
+      <Form.Group widths="equal">
+        <Form.Field> 
+          <label>First Name</label> 
+          <input placeholder="First Name"/>
+        </Form.Field>
+        <Form.Field> 
+          <label>Last Name</label> 
+          <input placeholder="Last Name"/>
+        </Form.Field>
+      </Form.Group>
+      <Form.Field> 
+        <label>Shelter Address</label> 
+        <input placeholder="Shelter Address"/>
+      </Form.Field>
+      <Form.Field> 
+        <label>Your Position at this Shelter</label> 
+        <input placeholder="Position"/>
+      </Form.Field>
+      <Form.Field> 
+        <label>Email</label> 
+        <input placeholder="Email"/>
+      </Form.Field>
 
       <NavLink to="/dashboard/staff">
-        <button>Submit</button>
+        <Form.Field control={Button}>Submit</Form.Field>
       </NavLink>
-    </form>
-  </main>
+    </Form>
+  </React.Fragment>
 );
 
 export default SignUpStaff;

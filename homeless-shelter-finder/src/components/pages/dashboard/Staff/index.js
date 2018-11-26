@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NewTaskForm from "./components/NewTaskForm";
+import StandardHeader from "../../../components/header";
 import { tasks } from "../../../../data/index";
 import "../dashboard.css";
 
@@ -27,11 +28,10 @@ class DashboardStaff extends Component {
 
   render() {
     return (
-      <main className="signup__staff">
-        <header>
-          <h2>Your Shelter's Tasks:</h2>
-        </header>
-
+      <React.Fragment>
+        
+        <StandardHeader header="Your Shelter's Tasks"/>
+        
         <h3>New Task</h3>
         <NewTaskForm onSubmit={this.handleNewTask} />
 
@@ -48,7 +48,8 @@ class DashboardStaff extends Component {
             </div>
           </div>
         ))}
-      </main>
+        
+      </React.Fragment>
     );
   }
 }
