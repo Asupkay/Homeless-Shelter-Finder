@@ -1,0 +1,21 @@
+{
+  "name": "homeless-shelter-finder",
+  "version": "1.0.0",
+  "description": "homeless shelter finder package",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.10",
+    "node-geocoder": "^3.22.0",
+    "uuid4": "^1.1.4",
+    "uuidv4": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrick Song",
+  "license": "ISC"
+}
