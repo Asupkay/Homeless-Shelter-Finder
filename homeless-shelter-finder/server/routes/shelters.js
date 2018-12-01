@@ -146,8 +146,9 @@ router.put("/v1/tasks", async function(req,res){
 
 router.delete("/v1/tasks", async function(req,res){
     try{
-        var shelterId = req.body.shelterId;
-        var taskId = req.body.taskId;
+        var shelterId = req.query.shelterId;
+        var taskId = req.query.taskId;
+        console.log(shelterId, taskId);
 
         shelterData.deleteTask(shelterId,taskId);
 

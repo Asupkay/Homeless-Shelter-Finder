@@ -32,7 +32,7 @@ class GoogleMapContainer extends Component {
         {this.props.shelters.map((shelter, index) => { 
           return (<MapMarker
             lat={shelter.lat}
-            lng={shelter.lng}
+            lng={shelter.long}
             key={index}
             shelter={shelter}
             filter={this.props.jobFilter}
