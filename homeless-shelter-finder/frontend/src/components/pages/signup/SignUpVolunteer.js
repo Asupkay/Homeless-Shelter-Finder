@@ -35,16 +35,6 @@ class SignUpVolunteer extends Component {
         <StandardHeader header="Information Form" subHeader="Enter the information below to find a shelter that best fits your skills"/>
 
         <Form style={{display: "block"}} onSubmit={ this.handleSubmit }>
-          <Form.Group widths="equal">
-            <Form.Field> 
-              <label>First Name</label> 
-              <input placeholder="First Name"/>
-            </Form.Field>
-            <Form.Field> 
-              <label>Last Name</label> 
-              <input placeholder="Last Name"/>
-            </Form.Field>
-          </Form.Group>
           <Form.Group grouped>
             <label>Skills</label>
             <Grid stackable columns={4}>
@@ -62,10 +52,6 @@ class SignUpVolunteer extends Component {
               </Grid.Column>
             </Grid>
           </Form.Group>
-          <Form.Field> 
-            <label>Email</label> 
-            <input placeholder="Email"/>
-          </Form.Field>
           <Form.Field control={Button}>Submit</Form.Field>
         </Form>
       </React.Fragment>

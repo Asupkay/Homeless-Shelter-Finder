@@ -6,7 +6,7 @@ const constructorMethod = (app) => {
 	app.use("/api", shelterRoutes);
 
 	app.use("*", (req,res) => {
-		res.status(404).json({ message: 'Not a valid route' });
+   res.sendFile(path.join(__dirname, '../../frontend/build/index.html')); 
 	});
 };
 
