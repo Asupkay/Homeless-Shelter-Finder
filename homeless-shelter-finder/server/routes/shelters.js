@@ -71,7 +71,6 @@ router.get("/v1/shelters", async function(req,res){
 
     try{
         const shelters = await shelterData.getAllShelters();
-        console.log("after get all shelters function")
     
         res.json({
             shelters: shelters 

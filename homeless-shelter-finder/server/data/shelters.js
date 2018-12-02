@@ -44,9 +44,7 @@ module.exports ={
 
     getAllShelters: async function getAllShelters(){
 
-        console.log("GETALL SHELTERSssst");
         const shelterCollection = await shelters();
-        console.log("after GETALL SHELTERS");
 
         const allShelters = await shelterCollection.find({}).toArray();
 

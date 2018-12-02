@@ -6,15 +6,17 @@ const renderTasks = (tasks) => {
   if(tasks.length === 0) {
     return <p>No tasks</p>
   } else {
-    return <React.Fragment>{tasks.map(task => <Task title={task.title} job={task.job} description={task.description} contact={task.contact} key={task.id}/>)}</React.Fragment>
+    return <React.Fragment>{tasks.map(task => <Task title={task.taskName} job={task.taskSkill} description={task.taskDesc} contact={task.contact} key={task.taskId}/>)}</React.Fragment>
   }
 }
 
 
 
 const MapMarker = ({ shelter, filter }) => {
+  filter = decodeURIComponent(filter);
   shelter.tasks = shelter.tasks.filter((task) => {
-    return filter.indexOf(task.job) >= 0;
+    console.log(task, filter);
+    return filter.indexOf(task.taskSkill) >= 0;
   });
 
   return (
