@@ -124,9 +124,16 @@ router.get("/v1/tasks",async function(req,res){
 
 router.put("/v1/tasks", async function(req,res){
     try{
-        var shelterId = req.body.shelterId;
-        var taskId = req.body.task.taskId;
-        var newTask = req.body.task;
+        const shelterId = req.body.shelterId;
+        const taskId = req.body.task.taskId;
+
+        const newTask = {
+            taskId: taskId,
+            taskName: req.body.task.name,
+            taskSkill: req.body.task.skill,
+            taskDesc: req.body.task.desc,
+            contact: req.body.task.contact
+        }
 
         console.log("UPDATED TASK: "+JSON.stringify(newTask));
 
